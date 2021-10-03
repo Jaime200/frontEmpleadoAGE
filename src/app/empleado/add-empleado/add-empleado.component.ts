@@ -4,6 +4,8 @@ import { EstadoCivilService } from '../../servicios/estado-civil.service';
 import { SexosService } from '../../servicios/sexos.service';
 import { EstadoCivilModel } from '../../Modelos/EstadoCivil.Model';
 import { SexoModel } from '../../Modelos/Sexo.Model';
+import { EmpleadoService } from '../../servicios/empleado.service';
+import { EmpleadoModel } from '../../Modelos/Empleado.Model';
 
 @Component({
   selector: 'app-add-empleado',
@@ -16,23 +18,23 @@ export class AddEmpleadoComponent implements OnInit {
   public dataSexo : SexoModel [] = [];
   constructor(
     private estadoCivil:EstadoCivilService,
-    private sexoService:SexosService
+    private sexoService:SexosService,
+    private empleadoService: EmpleadoService
   ) { 
     this.forma = new FormGroup({
 
-      "DPI" : new FormControl(null, [Validators.required, Validators.maxLength(4)]),
-      "PRIMER_NOMBRE" : new FormControl(null),
-      "SEGUNDO_NOMBRE" : new FormControl(null),
-      "PRIMER_APELLIDO" : new FormControl(null),
-      "SEGUNDO_APELLIDO" : new FormControl(null),
-      "APELLIDO_CASADA" : new FormControl(null),
-      "ESTADO_CIVIL" : new FormControl(null),
-      "SEXO" : new FormControl(null),
-      "NIT" : new FormControl(null),
-      "AFILIACION_IGSS" : new FormControl(null),
-      "IRTRA" : new FormControl(null),
-      "PASAPORTE" : new FormControl(null),
-
+      "DPI" : new FormControl(2093431251906, [Validators.required,,Validators.maxLength(16)]),
+      "PRIMER_NOMBRE" : new FormControl("Jaime", [Validators.required]),
+      "SEGUNDO_NOMBRE" : new FormControl(""),
+      "PRIMER_APELLIDO" : new FormControl("Muñoz" ,[Validators.required]),
+      "SEGUNDO_APELLIDO" : new FormControl("",),
+      "APELLIDO_CADASA" : new FormControl(""),
+      "ESTADO_CIVIL" : new FormControl("1",),
+      "SEXO" : new FormControl("1"),
+      "NIT" : new FormControl("7040518-2"),
+      "AFILIACION_IGSS" : new FormControl("2093431251906",[Validators.maxLength(16)]),
+      "PASAPORTE" : new FormControl("2093431251906",[Validators.maxLength(16)]),
+      "IRTRA" : new FormControl("2093431251906",[Validators.maxLength(16)]),
       // "CODIGO_BANCO"            : new FormControl(null,[Validators.required, Validators.maxLength(4)]),
       // "NOMBRE_BANCO"            : new FormControl(null,[Validators.required, Validators.maxLength(40)]),
       // "CONTACTO_BANCO"          : new FormControl(null,[Validators.maxLength(40)]),
@@ -61,6 +63,12 @@ export class AddEmpleadoComponent implements OnInit {
     if(this.forma.invalid) {
       return;
     }
+    const nuevoEmpleado : EmpleadoModel = { ...this.forma.value}    
+    console.log(nuevoEmpleado)
+    this.empleadoService.addEmpleados(nuevoEmpleado).subscribe(
+      (resp)=>{ console.log(resp)},
+      (err) => { console.error(err) }
+    )
   }
 
 }
