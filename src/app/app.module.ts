@@ -10,13 +10,19 @@ import { EditEmpleadoComponent } from './empleado/edit-empleado/edit-empleado.co
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSelectModule } from 'ngx-select-ex';
+import { SueldosComponent } from './sueldos/sueldos.component';
+import { AddSueldoComponent } from './sueldos/add-sueldo/add-sueldo.component';
+import { EditSueldoComponent } from './sueldos/edit-sueldo/edit-sueldo.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     EmpleadoComponent,
     AddEmpleadoComponent,
-    EditEmpleadoComponent
+    EditEmpleadoComponent,
+    SueldosComponent,
+    AddSueldoComponent,
+    EditSueldoComponent
   ],
   imports: [
     BrowserModule,
