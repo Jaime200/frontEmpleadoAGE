@@ -11,7 +11,7 @@ export class EstadoCivilService {
   ) { }
 
   getEstadoCivils(){
-    let url= `${environment.URL_SERVICIOS}/api/EstadoCivil`
+    let url= `${environment.URL_SERVICIOS}/EstadoCivil`
    return  this.http.get(url)
   }
 }

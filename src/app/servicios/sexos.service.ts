@@ -11,7 +11,7 @@ export class SexosService {
   ) { }
 
   getSexos(){
-    let url= `${environment.URL_SERVICIOS}/api/Sexo`
+    let url= `${environment.URL_SERVICIOS}/Sexo`
    return  this.http.get(url)
   }
 }
