@@ -9,6 +9,7 @@ import { AddEmpleadoComponent } from './empleado/add-empleado/add-empleado.compo
 import { EditEmpleadoComponent } from './empleado/edit-empleado/edit-empleado.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxSelectModule } from 'ngx-select-ex';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
