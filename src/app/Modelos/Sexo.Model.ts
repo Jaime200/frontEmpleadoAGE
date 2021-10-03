@@ -1,7 +1,7 @@
 export  class SexoModel {
 
-    public id              : number;
-    public descripcion    :string;
+    public ID              : number;
+    public DESCRIPCION    :string;
 constructor(        
     
 ){
