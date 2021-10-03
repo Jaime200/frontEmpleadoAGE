@@ -7,7 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { AddEmpleadoComponent } from './empleado/add-empleado/add-empleado.component';
 import { EditEmpleadoComponent } from './empleado/edit-empleado/edit-empleado.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,10 @@ import { EditEmpleadoComponent } from './empleado/edit-empleado/edit-empleado.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
