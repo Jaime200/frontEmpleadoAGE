@@ -62,7 +62,8 @@ export class AddEmpleadoComponent implements OnInit {
 
   guardar(){
     if(this.forma.invalid) {
-      return;
+      alert("Debe ingresar correctamente la informacion")
+      return ;
     }
     const nuevoEmpleado : EmpleadoModel = { ...this.forma.value}    
     console.log(nuevoEmpleado)
