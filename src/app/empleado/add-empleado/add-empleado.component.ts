@@ -48,6 +48,7 @@ export class AddEmpleadoComponent implements OnInit {
   ngOnInit(): void {
     this.estadoCivil.getEstadoCivils().subscribe(
       (resp:EstadoCivilModel[])=>{
+        console.log(resp)
         this.dataEstadoCivil = resp   
       },
       (err)=> console.error(err)
@@ -66,8 +67,12 @@ export class AddEmpleadoComponent implements OnInit {
     const nuevoEmpleado : EmpleadoModel = { ...this.forma.value}    
     console.log(nuevoEmpleado)
     this.empleadoService.addEmpleados(nuevoEmpleado).subscribe(
-      (resp)=>{ console.log(resp)},
-      (err) => { console.error(err) }
+      (resp)=>{ 
+        alert("Empleado Ingresado")
+        console.log(resp)  },
+      (err) => { 
+        alert("Error "+ err.error)
+        console.error(err) }
     )
   }
 

@@ -7,29 +7,32 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        
         <th scope="col">DPI</th>
         <th scope="col">Nombres</th>
         <th scope="col">Apellido</th>
+        <th scope="col">Opciones</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+      <tr *ngFor="let empleado of dataEmpleados" >    
+        <th>{{empleado.DPI}}</th>
+        <td>{{empleado.PRIMER_NOMBRE}}</td>
+        <td>{{empleado.PRIMER_APELLIDO}}</td>
+        <td>
+          <button>
+            Sueldos
+          </button>
+          <button>
+            Direccion
+          </button>
+          <button>
+            Informacion
+          </button>
+          <i class="bi bi-backspace"></i>
+        </td>
+        
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      
     </tbody>
   </table>

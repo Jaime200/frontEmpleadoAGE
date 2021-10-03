@@ -12,8 +12,17 @@ export class EmpleadoService {
   ) { }
 
   addEmpleados(newEmpleado: EmpleadoModel){
-    let url= `${environment.URL_SERVICIOS}/Empleado`
-    newEmpleado.DPI =2093431251906;
+    const url= `${environment.URL_SERVICIOS}/Empleado`
+    
    return  this.http.post(url, newEmpleado)
+  }
+  putEmpleados(updateEmpleado: EmpleadoModel){
+    const url= `${environment.URL_SERVICIOS}/Empleado`
+   return  this.http.put(url, updateEmpleado)
+  }
+
+  getEmpleados(){
+    const url= `${environment.URL_SERVICIOS}/Empleado`
+   return  this.http.get(url)
   }
 }
