@@ -10,8 +10,8 @@ export class EstadoCivilService {
     public http: HttpClient,
   ) { }
 
-  ObtenerBancos(){
-    let url= `${environment.URL_SERVICIOS}/BANCOS`
+  getEstadoCivils(){
+    let url= `${environment.URL_SERVICIOS}/api/EstadoCivil`
    return  this.http.get(url)
   }
 }
