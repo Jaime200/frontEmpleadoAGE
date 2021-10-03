@@ -67,6 +67,7 @@ export class EditEmpleadoComponent implements OnInit {
   cargarEmpleado(DPI:number){
     this.empleadoService.getEmpleado(DPI).subscribe(
       (resp:EmpleadoModel)=>{ 
+        this.dataEmpleado = resp;
         this.forma.setValue(resp)
         this.forma.controls['DPI'].disable();
       },
@@ -80,9 +81,9 @@ export class EditEmpleadoComponent implements OnInit {
       alert("Debe ingresar correctamente la informacion")
       return ;
     }
-    const nuevoEmpleado : EmpleadoModel = { ...this.forma.value}    
-    console.log(nuevoEmpleado)
-    this.empleadoService.addEmpleados(nuevoEmpleado).subscribe(
+    const updateEmpleado : EmpleadoModel = { ...this.forma.value}    
+    updateEmpleado.DPI = this.dataEmpleado.DPI;
+    this.empleadoService.putEmpleados(updateEmpleado).subscribe(
       (resp)=>{ 
         alert("Empleado Ingresado")
         console.log(resp)  },
