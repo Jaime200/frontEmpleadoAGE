@@ -1,5 +1,5 @@
 <div class="p-4">
-    <button class="btn btn-primary">
+    <button class="btn btn-primary" onclick="">
         Nuevo Empleado
     </button>
   </div>
@@ -20,16 +20,11 @@
         <td>{{empleado.PRIMER_NOMBRE}}</td>
         <td>{{empleado.PRIMER_APELLIDO}}</td>
         <td>
-          <button>
-            Sueldos
-          </button>
-          <button>
-            Direccion
-          </button>
-          <button>
-            Informacion
-          </button>
-          <i class="bi bi-backspace"></i>
+          <button class="bi bi-currency-dollar"  title="Sueldos"></button>
+          <button class="bi bi-building"  title="Dirección"></button>
+          <button class="bi bi-info-circle"  title="Información"></button>
+          <button class="bi bi-pencil-square"  title="Editar" (click)="editar(empleado)" ></button>
+          
         </td>
         
       </tr>

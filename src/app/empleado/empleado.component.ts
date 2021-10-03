@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmpleadoService } from '../servicios/empleado.service';
 import { EmpleadoModel } from '../Modelos/Empleado.Model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-empleado',
@@ -11,7 +12,8 @@ export class EmpleadoComponent implements OnInit {
 
   public  dataEmpleados : EmpleadoModel[] = []
   constructor(
-    private empleadoService: EmpleadoService
+    private empleadoService: EmpleadoService,
+    private router         : Router,
   ) { 
 
     this.empleadoService.getEmpleados().subscribe(
@@ -24,6 +26,10 @@ export class EmpleadoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  editar(editEmpleado:EmpleadoModel){
+    this.router.navigate(['/editEmpleado',editEmpleado.DPI])
   }
 
 }
