@@ -32,4 +32,12 @@ export class EmpleadoComponent implements OnInit {
     this.router.navigate(['/editEmpleado',editEmpleado.DPI])
   }
 
+  sueldos(editEmpleado:EmpleadoModel){
+    this.router.navigate(['/sueldo',editEmpleado.DPI])
+  }
+
+  nuevoEmpleado(){
+    this.router.navigate(['/addEmpleado'])
+  }
+
 }
