@@ -25,4 +25,9 @@ export class EmpleadoService {
     const url= `${environment.URL_SERVICIOS}/Empleado`
    return  this.http.get(url)
   }
+
+  getEmpleado( DPI:number){
+    const url= `${environment.URL_SERVICIOS}/Empleado/${DPI}`
+   return  this.http.get(url)
+  }
 }
