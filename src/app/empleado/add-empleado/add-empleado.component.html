@@ -1,1 +1,222 @@
-<p>add-empleado works!</p>
+<form [formGroup] ="forma"  novalidate="novalidate" (ngSubmit)="guardar()">     
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">DPI</label>
+                <input  type="text" class="form-control" placeholder="dpi" formControlName="dpi"
+                [ngClass]="{'is-invalid':
+                (forma.get('dpi').errors?.required) && (forma.get('dpi').touched ===true) }" >
+                <div  *ngIf="forma.get('dpi').errors?.required && (forma.get('dpi').touched ===true)"  
+                class="form-control-feedback text-danger">
+                  El dpi es necesario
+                </div>
+                <div  *ngIf="!!forma.get('dpi').errors?.maxlength && (forma.get('dpi').touched ===true)"  
+                  class="form-control-feedback text-danger">
+                  Máximo de caracteres de <strong>{{forma.get('dpi').errors?.maxlength.requiredLength}}</strong>
+                  caracteres actuales <strong>{{forma.get('dpi').errors?.maxlength.actualLength}}</strong>
+                  </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">Primer Nombre</label>
+                <input  type="text" class="form-control" placeholder="Primer nombre" formControlName="primeR_NOMBRE"
+                [ngClass]="{'is-invalid':
+                (forma.get('primeR_NOMBRE').errors?.required) && (forma.get('primeR_NOMBRE').touched ===true) }" >
+                <div  *ngIf="forma.get('primeR_NOMBRE').errors?.required && (forma.get('DPI').touched ===true)"  
+                class="form-control-feedback text-danger">
+                  El primer nombre es necesario
+                </div>
+                <div  *ngIf="!!forma.get('primeR_NOMBRE').errors?.maxlength && (forma.get('primeR_NOMBRE').touched ===true)"  
+                  class="form-control-feedback text-danger">
+                  Máximo de caracteres de <strong>{{forma.get('primeR_NOMBRE').errors?.maxlength.requiredLength}}</strong>
+                  caracteres actuales <strong>{{forma.get('primeR_NOMBRE').errors?.maxlength.actualLength}}</strong>
+                  </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">Segundo Nombre</label>
+                <input  type="text" class="form-control" placeholder="Segundo nombre" formControlName="segundO_NOMBRE"
+                [ngClass]="{'is-invalid':
+                (forma.get('segundO_NOMBRE').errors?.required) && (forma.get('segundO_NOMBRE').touched ===true) }" >
+                <div  *ngIf="forma.get('segundO_NOMBRE').errors?.required && (forma.get('DPI').touched ===true)"  
+                class="form-control-feedback text-danger">
+                  El segundo nombre es necesario
+                </div>
+                <div  *ngIf="!!forma.get('segundO_NOMBRE').errors?.maxlength && (forma.get('segundO_NOMBRE').touched ===true)"  
+                  class="form-control-feedback text-danger">
+                  Máximo de caracteres de <strong>{{forma.get('segundO_NOMBRE').errors?.maxlength.requiredLength}}</strong>
+                  caracteres actuales <strong>{{forma.get('segundO_NOMBRE').errors?.maxlength.actualLength}}</strong>
+                  </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">Primer Apellido</label>
+                <input  type="text" class="form-control" placeholder="Primer apellido" formControlName="primeR_APELLIDO"
+                [ngClass]="{'is-invalid':
+                (forma.get('primeR_APELLIDO').errors?.required) && (forma.get('primeR_APELLIDO').touched ===true) }" >
+                <div  *ngIf="forma.get('primeR_APELLIDO').errors?.required && (forma.get('DPI').touched ===true)"  
+                class="form-control-feedback text-danger">
+                  El primer apellido es necesario
+                </div>
+                <div  *ngIf="!!forma.get('primeR_APELLIDO').errors?.maxlength && (forma.get('primeR_APELLIDO').touched ===true)"  
+                  class="form-control-feedback text-danger">
+                  Máximo de caracteres de <strong>{{forma.get('primeR_APELLIDO').errors?.maxlength.requiredLength}}</strong>
+                  caracteres actuales <strong>{{forma.get('primeR_APELLIDO').errors?.maxlength.actualLength}}</strong>
+                  </div>
+            </div>
+        </div>
+
+
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">Segundo Apellido</label>
+                <input  type="text" class="form-control" placeholder="Segundo apellido" formControlName="segundO_APELLIDO"
+                [ngClass]="{'is-invalid':
+                (forma.get('segundO_APELLIDO').errors?.required) && (forma.get('segundO_APELLIDO').touched ===true) }" >
+                <div  *ngIf="forma.get('segundO_APELLIDO').errors?.required && (forma.get('DPI').touched ===true)"  
+                class="form-control-feedback text-danger">
+                  El segundo apellido es necesario
+                </div>
+                <div  *ngIf="!!forma.get('segundO_APELLIDO').errors?.maxlength && (forma.get('segundO_APELLIDO').touched ===true)"  
+                  class="form-control-feedback text-danger">
+                  Máximo de caracteres de <strong>{{forma.get('segundO_APELLIDO').errors?.maxlength.requiredLength}}</strong>
+                  caracteres actuales <strong>{{forma.get('segundO_APELLIDO').errors?.maxlength.actualLength}}</strong>
+                  </div>
+            </div>
+        </div>
+
+
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">Apellido Casada</label>
+                <input  type="text" class="form-control" placeholder="Apellido Casada" formControlName="apellidO_CASADA"
+                [ngClass]="{'is-invalid':
+                (forma.get('apellidO_CASADA').errors?.required) && (forma.get('apellidO_CASADA').touched ===true) }" >
+                <div  *ngIf="forma.get('apellidO_CASADA').errors?.required && (forma.get('DPI').touched ===true)"  
+                class="form-control-feedback text-danger">
+                  Apellido de casada es necesario
+                </div>
+                <div  *ngIf="!!forma.get('apellidO_CASADA').errors?.maxlength && (forma.get('apellidO_CASADA').touched ===true)"  
+                  class="form-control-feedback text-danger">
+                  Máximo de caracteres de <strong>{{forma.get('apellidO_CASADA').errors?.maxlength.requiredLength}}</strong>
+                  caracteres actuales <strong>{{forma.get('apellidO_CASADA').errors?.maxlength.actualLength}}</strong>
+                  </div>
+            </div>
+        </div>
+
+
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">Estado Civil</label>
+                <ngx-select formControlName="estadO_CIVIL"
+                [allowClear]="true"
+                [defaultValue]=""
+                [items]="dataEstadoCivil" 
+                optionValueField="id" 
+                optionTextField="descripcion"
+                placeholder="Seleccione estado civil" > 
+                </ngx-select>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">Sexo</label>
+                <ngx-select formControlName="sexo"
+                [allowClear]="true"
+                [defaultValue]=""
+                [items]="dataSexo" 
+                optionValueField="id" 
+                optionTextField="descripcion"
+                placeholder="Seleccione estado civil" > 
+                </ngx-select>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">Nit</label>
+                <input  type="text" class="form-control" placeholder="nit" formControlName="nit"
+                [ngClass]="{'is-invalid':
+                (forma.get('nit').errors?.required) && (forma.get('nit').touched ===true) }" >
+                <div  *ngIf="forma.get('nit').errors?.required && (forma.get('DPI').touched ===true)"  
+                class="form-control-feedback text-danger">
+                  El nit es necesario
+                </div>
+                <div  *ngIf="!!forma.get('nit').errors?.maxlength && (forma.get('nit').touched ===true)"  
+                  class="form-control-feedback text-danger">
+                  Máximo de caracteres de <strong>{{forma.get('nit').errors?.maxlength.requiredLength}}</strong>
+                  caracteres actuales <strong>{{forma.get('nit').errors?.maxlength.actualLength}}</strong>
+                  </div>
+            </div>
+        </div>
+
+
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">Afiliación IGSS</label>
+                <input  type="text" class="form-control" placeholder="Afiliación IGSS" formControlName="afiliacioN_IGSS"
+                [ngClass]="{'is-invalid':
+                (forma.get('afiliacioN_IGSS').errors?.required) && (forma.get('afiliacioN_IGSS').touched ===true) }" >
+                <div  *ngIf="forma.get('afiliacioN_IGSS').errors?.required && (forma.get('DPI').touched ===true)"  
+                class="form-control-feedback text-danger">
+                  El Afiliación IGSS es necesario
+                </div>
+                <div  *ngIf="!!forma.get('afiliacioN_IGSS').errors?.maxlength && (forma.get('afiliacioN_IGSS').touched ===true)"  
+                  class="form-control-feedback text-danger">
+                  Máximo de caracteres de <strong>{{forma.get('afiliacioN_IGSS').errors?.maxlength.requiredLength}}</strong>
+                  caracteres actuales <strong>{{forma.get('afiliacioN_IGSS').errors?.maxlength.actualLength}}</strong>
+                  </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">Irtra</label>
+                <input  type="text" class="form-control" placeholder="Irtra" formControlName="irtra"
+                [ngClass]="{'is-invalid':
+                (forma.get('irtra').errors?.required) && (forma.get('irtra').touched ===true) }" >
+                <div  *ngIf="forma.get('irtra').errors?.required && (forma.get('DPI').touched ===true)"  
+                class="form-control-feedback text-danger">
+                  El no. irtra es necesario
+                </div>
+                <div  *ngIf="!!forma.get('irtra').errors?.maxlength && (forma.get('irtra').touched ===true)"  
+                  class="form-control-feedback text-danger">
+                  Máximo de caracteres de <strong>{{forma.get('irtra').errors?.maxlength.requiredLength}}</strong>
+                  caracteres actuales <strong>{{forma.get('irtra').errors?.maxlength.actualLength}}</strong>
+                  </div>
+            </div>
+        </div>
+
+
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">Pasaporte</label>
+                <input  type="text" class="form-control" placeholder="Pasaporte" formControlName="PASAPORTE"
+                [ngClass]="{'is-invalid':
+                (forma.get('PASAPORTE').errors?.required) && (forma.get('PASAPORTE').touched ===true) }" >
+                <div  *ngIf="forma.get('PASAPORTE').errors?.required && (forma.get('DPI').touched ===true)"  
+                class="form-control-feedback text-danger">
+                  El no. PASAPORTE es necesario
+                </div>
+                <div  *ngIf="!!forma.get('PASAPORTE').errors?.maxlength && (forma.get('PASAPORTE').touched ===true)"  
+                  class="form-control-feedback text-danger">
+                  Máximo de caracteres de <strong>{{forma.get('PASAPORTE').errors?.maxlength.requiredLength}}</strong>
+                  caracteres actuales <strong>{{forma.get('PASAPORTE').errors?.maxlength.actualLength}}</strong>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary btn-block">            
+            <span >Guardar</span>                                
+        </button>
+    </div>
+
+</form> 
