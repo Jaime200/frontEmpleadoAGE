@@ -1,16 +1,16 @@
 export  class EmpleadoModel {
 
-        public DPI              : number;
-        public PRIMER_NOMBRE    :string;
-        public SEGUNDO_NOMBRE   :string;
-        public PRIMER_APELLIDO  :string;
-        public SEGUNDO_APELLIDO :string;
-        public APELLIDO_CASADA  :string;
-        public ESTADO_CIVIL     :string;
-        public SEXO             :number;
-        public NIT              :number;
-        public AFILIACION_IGSS  :string;
-        public IRTRA            :string;
+        public dpi              : number;
+        public primeR_NOMBRE    :string;
+        public segundO_NOMBRE   :string;
+        public primeR_APELLIDO  :string;
+        public segundO_APELLIDO :string;
+        public apellidO_CASADA  :string;
+        public estadO_CIVIL     :string;
+        public sexo             :number;
+        public nit              :number;
+        public afiliacioN_IGSS  :string;
+        public irtra            :string;
         public PASAPORTE        :string;
     constructor(        
         
