@@ -12,10 +12,10 @@ export class SueldosService {
     public http: HttpClient,
   ) { }
 
-  addSueldo(newEmpleado: SueldoModel){
+  addSueldo(newSueldoEmpleado: SueldoModel){
     const url= `${environment.URL_SERVICIOS}/sueldoEmpleado`
     
-   return  this.http.post(url, newEmpleado)
+   return  this.http.post(url, newSueldoEmpleado)
   }
   putSueldo(updateEmpleado: SueldoModel){
     const url= `${environment.URL_SERVICIOS}/sueldoEmpleado`
@@ -27,8 +27,13 @@ export class SueldosService {
    return  this.http.get(url)
   }
 
-  getSueldosById(){
-    const url= `${environment.URL_SERVICIOS}/sueldoEmpleado`
+  getSueldosById(ID:number,DPI:number){
+    const url= `${environment.URL_SERVICIOS}/sueldoEmpleado/${ID}/${DPI}`
    return  this.http.get(url)
+  }
+
+  deleteSueldo(ID:number,DPI:number){
+    const url= `${environment.URL_SERVICIOS}/sueldoEmpleado/${ID}/${DPI}`
+   return  this.http.delete(url)
   }
 }

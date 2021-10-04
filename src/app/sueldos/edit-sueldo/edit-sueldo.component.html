@@ -1,1 +1,47 @@
-<p>edit-sueldo works!</p>
+
+<h1>Editar Sueldo</h1>
+<hr>
+<form [formGroup] ="forma"  novalidate="novalidate" (ngSubmit)="guardar()">     
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">Sueldo base</label>
+                <input  type="number" class="form-control" placeholder="Sueldo base" formControlName="SUELDO_BASE"
+                [ngClass]="{'is-invalid':
+                (forma.get('SUELDO_BASE').errors?.required) && (forma.get('SUELDO_BASE').touched ===true) }" >
+                <div  *ngIf="forma.get('SUELDO_BASE').errors?.required && (forma.get('SUELDO_BASE').touched ===true)"  
+                class="form-control-feedback text-danger">
+                  El SUELDO_BASE es necesario
+                </div>
+                <div  *ngIf="!!forma.get('SUELDO_BASE').errors?.maxlength && (forma.get('SUELDO_BASE').touched ===true)"  
+                  class="form-control-feedback text-danger">
+                  Máximo de caracteres de <strong>{{forma.get('SUELDO_BASE').errors?.maxlength.requiredLength}}</strong>
+                  caracteres actuales <strong>{{forma.get('SUELDO_BASE').errors?.maxlength.actualLength}}</strong>
+                  </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group" >
+                <label class="control-label mb-1">Bonificación</label>
+                <input  type="number" class="form-control" placeholder="Sueldo base" formControlName="BONIFICACION"
+                [ngClass]="{'is-invalid':
+                (forma.get('BONIFICACION').errors?.required) && (forma.get('BONIFICACION').touched ===true) }" >
+                <div  *ngIf="forma.get('BONIFICACION').errors?.required && (forma.get('BONIFICACION').touched ===true)"  
+                class="form-control-feedback text-danger">
+                  El BONIFICACION es necesario
+                </div>
+                <div  *ngIf="!!forma.get('BONIFICACION').errors?.maxlength && (forma.get('BONIFICACION').touched ===true)"  
+                  class="form-control-feedback text-danger">
+                  Máximo de caracteres de <strong>{{forma.get('BONIFICACION').errors?.maxlength.requiredLength}}</strong>
+                  caracteres actuales <strong>{{forma.get('BONIFICACION').errors?.maxlength.actualLength}}</strong>
+                  </div>
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary btn-block">            
+                <span >Guardar</span>                                
+            </button>
+        </div>
+    </div>
+</form>

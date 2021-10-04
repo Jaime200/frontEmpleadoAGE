@@ -5,6 +5,7 @@ import { EmpleadoComponent } from './empleado/empleado.component';
 import { EditEmpleadoComponent } from './empleado/edit-empleado/edit-empleado.component';
 import { SueldosComponent } from './sueldos/sueldos.component';
 import { AddSueldoComponent } from './sueldos/add-sueldo/add-sueldo.component';
+import { EditSueldoComponent } from './sueldos/edit-sueldo/edit-sueldo.component';
 
 const routes: Routes = [
   {path: '',  component: EmpleadoComponent},
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: 'editEmpleado/:DPI', component: EditEmpleadoComponent },
   { path: 'sueldo/:DPI', component: SueldosComponent },
   { path: 'sueldo/add/:DPI', component: AddSueldoComponent },
-  { path: 'sueldo/edit/:DPI', component: EditEmpleadoComponent },
+  { path: 'sueldo/edit/:id/:DPI', component: EditSueldoComponent },
   {path: '',  redirectTo : '/', pathMatch:'full'},
 ];
 

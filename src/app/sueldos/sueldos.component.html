@@ -1,1 +1,30 @@
-<p>sueldos works!</p>
+<div class="p-4">
+    <h2>{{dataEmpleado?.PRIMER_NOMBRE}} {{dataEmpleado?.PRIMER_APELLIDO}}</h2>
+    <h5>{{dataEmpleado?.DPI}}</h5>
+    <button class="btn btn-primary" (click)="nuevoSueldo()" >
+        Nuevo Sueldo
+    </button>
+  </div>
+
+<table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">Sueldo</th>
+        <th scope="col">Bonificacion</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sueldo of dataSueldo" >    
+        <th>{{sueldo.SUELDO_BASE}}</th>
+        <td>{{sueldo.BONIFICACION}}</td>
+        <td>
+          <button class="bi bi-pencil-square"  title="Editar" (click)="editar(sueldo)" ></button>
+          <button class="bi bi-trash"  title="Eliminar" (click)="eliminar(sueldo)" ></button>
+        </td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
