@@ -6,6 +6,7 @@ import { EstadoCivilModel } from '../../Modelos/EstadoCivil.Model';
 import { SexoModel } from '../../Modelos/Sexo.Model';
 import { EmpleadoService } from '../../servicios/empleado.service';
 import { EmpleadoModel } from '../../Modelos/Empleado.Model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-empleado',
@@ -19,7 +20,8 @@ export class AddEmpleadoComponent implements OnInit {
   constructor(
     private estadoCivil:EstadoCivilService,
     private sexoService:SexosService,
-    private empleadoService: EmpleadoService
+    private empleadoService: EmpleadoService,
+    private router         : Router,
   ) { 
     this.forma = new FormGroup({
 
@@ -35,12 +37,6 @@ export class AddEmpleadoComponent implements OnInit {
       "AFILIACION_IGSS" : new FormControl("2093431251906",[Validators.maxLength(16)]),
       "PASAPORTE" : new FormControl("2093431251906",[Validators.maxLength(16)]),
       "IRTRA" : new FormControl("2093431251906",[Validators.maxLength(16)]),
-      // "CODIGO_BANCO"            : new FormControl(null,[Validators.required, Validators.maxLength(4)]),
-      // "NOMBRE_BANCO"            : new FormControl(null,[Validators.required, Validators.maxLength(40)]),
-      // "CONTACTO_BANCO"          : new FormControl(null,[Validators.maxLength(40)]),
-      // "TRASLADOS_AUTOMATICO"    : new FormControl(null,[Validators.maxLength(1)]),
-      // "BANCO_CONCILIACION"      : new FormControl(null,[Validators.maxLength(10)]),
-      // "UTILIZACION_EN_MONTO"    : new FormControl(null,[Validators.maxLength(1)]),
 
     })
   }
@@ -75,6 +71,10 @@ export class AddEmpleadoComponent implements OnInit {
         alert("Error "+ err.error)
         console.error(err) }
     )
+  }
+
+  regresar(){
+    this.router.navigate(['/'])
   }
 
 }

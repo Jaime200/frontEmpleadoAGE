@@ -6,7 +6,7 @@ import { EmpleadoService } from '../../servicios/empleado.service';
 import { EstadoCivilModel } from '../../Modelos/EstadoCivil.Model';
 import { SexoModel } from '../../Modelos/Sexo.Model';
 import { EmpleadoModel } from '../../Modelos/Empleado.Model';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-empleado',
@@ -23,6 +23,7 @@ export class EditEmpleadoComponent implements OnInit {
     private sexoService:SexosService,
     private empleadoService: EmpleadoService,
     public activatedRouter          : ActivatedRoute,
+    private router         : Router,
   ) { 
 
     this.forma = new FormGroup({
@@ -92,5 +93,12 @@ export class EditEmpleadoComponent implements OnInit {
         console.error(err) }
     )
   }
+
+  
+  regresar(){
+    this.router.navigate(['/'])
+  }
+
+  
 
 }
