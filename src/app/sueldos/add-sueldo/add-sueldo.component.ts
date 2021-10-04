@@ -39,10 +39,10 @@ export class AddSueldoComponent implements OnInit {
       alert("Debe ingresar correctamente la informacion")
       return ;
     }
-    const updateSueldo : SueldoModel = { ...this.forma.value}    
-    updateSueldo.DPI = Number(this.DPI)
-    console.log(updateSueldo)
-    this.sueldoService.putSueldo(updateSueldo).subscribe(
+    const neSueldo : SueldoModel = { ...this.forma.value}    
+    neSueldo.DPI = Number(this.DPI)
+    
+    this.sueldoService.addSueldo(neSueldo).subscribe(
       (resp)=>{ 
         alert("Sueldo Actualizado")
           },
