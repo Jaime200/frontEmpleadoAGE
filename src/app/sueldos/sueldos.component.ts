@@ -62,4 +62,7 @@ export class SueldosComponent implements OnInit {
     this.router.navigate(['/sueldo/edit',sueldo.ID,this.dataEmpleado.DPI])
   }
 
+  regresar(){
+    this.router.navigate(['/'])
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { SueldoModel } from '../../Modelos/Sueldo.Model';
 import { SueldosService } from '../../servicios/sueldos.service';
 
@@ -16,6 +16,7 @@ export class AddSueldoComponent implements OnInit {
   constructor(
     private sueldoService:SueldosService,
     private activatedRouter          : ActivatedRoute,
+    private router         : Router,
   ) {
     this.forma = new FormGroup({
 
@@ -50,6 +51,10 @@ export class AddSueldoComponent implements OnInit {
         alert("Error "+ err)
         console.error(err) }
     )
+  }
+
+  regresar(){
+    this.router.navigate(['/sueldo',this.DPI])
   }
 
 }

@@ -69,4 +69,8 @@ export class EditSueldoComponent implements OnInit {
     )
   }
 
+  regresar(){
+    this.router.navigate(['/sueldo',this.DPI])
+  }
+
 }
