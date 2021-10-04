@@ -13,6 +13,8 @@ import { NgxSelectModule } from 'ngx-select-ex';
 import { SueldosComponent } from './sueldos/sueldos.component';
 import { AddSueldoComponent } from './sueldos/add-sueldo/add-sueldo.component';
 import { EditSueldoComponent } from './sueldos/edit-sueldo/edit-sueldo.component';
+import { DireccionComponent } from './direccion/direccion.component';
+import { AddDireccionComponent } from './direccion/add-direccion/add-direccion.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,9 @@ import { EditSueldoComponent } from './sueldos/edit-sueldo/edit-sueldo.component
     EditEmpleadoComponent,
     SueldosComponent,
     AddSueldoComponent,
-    EditSueldoComponent
+    EditSueldoComponent,
+    DireccionComponent,
+    AddDireccionComponent
   ],
   imports: [
     BrowserModule,

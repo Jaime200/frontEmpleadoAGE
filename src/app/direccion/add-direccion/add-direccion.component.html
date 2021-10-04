@@ -1,0 +1,31 @@
+
+<h1>Nuevo Sueldo</h1>
+<hr>
+<form [formGroup] ="forma"  novalidate="novalidate" (ngSubmit)="guardar()">     
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group" >
+                <label class="control-label mb-1">Direccion</label>
+                <input  type="text" class="form-control" placeholder="Direccion" formControlName="DIRECCION"
+                [ngClass]="{'is-invalid':
+                (forma.get('DIRECCION').errors?.required) && (forma.get('DIRECCION').touched ===true) }" >
+                <div  *ngIf="forma.get('DIRECCION').errors?.required && (forma.get('DIRECCION').touched ===true)"  
+                class="form-control-feedback text-danger">
+                  El DIRECCION es necesario
+                </div>
+                <div  *ngIf="!!forma.get('DIRECCION').errors?.maxlength && (forma.get('DIRECCION').touched ===true)"  
+                  class="form-control-feedback text-danger">
+                  Máximo de caracteres de <strong>{{forma.get('DIRECCION').errors?.maxlength.requiredLength}}</strong>
+                  caracteres actuales <strong>{{forma.get('DIRECCION').errors?.maxlength.actualLength}}</strong>
+                  </div>
+            </div>
+        </div>
+
+
+        <div>
+            <button type="submit" class="btn btn-primary btn-block">            
+                <span >Guardar</span>                                
+            </button>
+        </div>
+    </div>
+</form>

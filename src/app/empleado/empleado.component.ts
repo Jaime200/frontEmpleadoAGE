@@ -40,4 +40,7 @@ export class EmpleadoComponent implements OnInit {
     this.router.navigate(['/addEmpleado'])
   }
 
+  direccion(empleado:EmpleadoModel){
+    this.router.navigate(['/direccion', empleado.DPI])
+  }
 }

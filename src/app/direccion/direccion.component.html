@@ -1,0 +1,26 @@
+<div class="p-4">
+    <h2>{{dataEmpleado?.PRIMER_NOMBRE}} {{dataEmpleado?.PRIMER_APELLIDO}}</h2>
+    <h5>{{dataEmpleado?.DPI}}</h5>
+    <button class="btn btn-primary" (click)="nuevaDireccion()" >
+        Nueva Dirección
+    </button>
+  </div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Direccion</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let direccion of dataDireccion" >    
+        <th>{{direccion.DIRECCION}}</th>
+        <td>
+          <button class="bi bi-trash"  title="Eliminar" (click)="eliminar(direccion)" ></button>
+        </td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
