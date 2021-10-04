@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { DireccionModel } from '../../Modelos/Direccion.Model';
 import { DireccionService } from '../../servicios/direccion.service';
 
@@ -17,6 +17,7 @@ export class AddDireccionComponent implements OnInit {
   constructor(
     private direccionService : DireccionService,
     private activatedRouter          : ActivatedRoute,
+    private router         : Router,
   ) {
     this.forma = new FormGroup({
       "DIRECCION" : new FormControl(null, [Validators.required]),
@@ -51,6 +52,10 @@ export class AddDireccionComponent implements OnInit {
         alert("Error "+ err)
         console.error(err) }
     )
+  }
+
+  regresar(){
+    this.router.navigate(['/direccion',this.DPI])
   }
 
 }

@@ -54,6 +54,12 @@ export class DireccionComponent implements OnInit {
       );
      
 	  }
+
+   
+  }
+
+  regresar(){
+    this.router.navigate(['/'])
   }
 
 }
